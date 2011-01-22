@@ -1,0 +1,10 @@
+**/*/log/*
+**/*/tmp/*
+*~
+*.sqlite3
+.bundle
+rdoc/*
+pkg
+log
+test/tmp/*
+.DS_Store

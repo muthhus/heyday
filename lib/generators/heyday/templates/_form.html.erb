@@ -1,0 +1,38 @@
+<%%remote_form_for @event, :before => "$('#creating_events').show();", :complete => "$('#creating_events').hide();" do |f| %>
+<p>
+  <%%=f.label :title %>
+  <br/>
+  <%%=f.text_field :title %>
+</p>
+<p>
+  <%%=f.label :description %>
+  <br/>
+  <%%=f.text_area :description, :rows => 4, :cols => 30 %>
+</p>
+<p>
+  <%%=f.label :start_at, 'Start Time' %>
+  <br/>
+  <%%=f.datetime_select :start_at %>
+</p>
+<p>
+  <%%=f.label :end_at, 'End Time' %>
+  <br/>
+  <%%=f.datetime_select :end_at %>
+</p>
+<p>
+  <%%=f.label :all_day %>
+  <%%=f.check_box :all_day %>
+</p>
+<p>
+  <%%=f.label :period, "Repeats" %>
+  <%%=f.select :period, <%= model_class_name.camelize %>.repeat_options,{}, :onchange => "showPeriodAndFrequency(this.value);" %>
+</p>
+<p id = "frequency" style = "display:none;">
+  <%%=f.label :frequency, "Repeat every" %>
+  <%%=f.select :frequency, (1..30).to_a %> <span id = "period"></span>
+</p>
+<%%=f.hidden_field :id, :value => @event.id %>
+<p>
+  <%%=f.submit 'Save' %> <span id="creating_events" style="display:none;">Saving, Please wait...</span>
+</p>
+<%%end %>
