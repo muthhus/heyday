@@ -70,3 +70,22 @@ mate init.rb
 > require 'heyday'
 
 Then people can use script/plugin install git://.../heyday.git
+
+== Installation
+
+Install ruby and ruby gems
+...
+
+sudo gem install rails 								// Install rails
+rails new MyApplication								// Create a new rails app
+
+Add heyday to your Gemfile:
+gem 'heyday', :require => 'heyday' 
+
+rails generate heyday:install --model_name=event --controller_name=calendar --jquery --layout // Generate files
+rake db:migrate 											// Migrate
+rails server 													// Start the server
+open http://localhost:3000/calendar 	// View the calendar
+
+
+

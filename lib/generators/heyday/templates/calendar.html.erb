@@ -1,5 +1,5 @@
 <p>
-  <%= link_to 'Create Event', :url => {:action => :new}, :remote => true, :before => "$('#loading').show()", :complete => "$('#loading').hide()" %>
+  <%%= link_to 'Create Event', {:action => :new}, :remote => true, :before => "$('#loading').show()", :complete => "$('#loading').hide()" %>
 </p>
 
 <script>
@@ -22,7 +22,7 @@
               else 
                   $('#loading').hide();
           },
-          events: "/events/get_events",
+          events: "/<%= view_name %>/get_events",
           timeFormat: 'h:mm t{ - h:mm t} ',
           dragOpacity: "0.5",
           eventDrop: function(event, dayDelta, minuteDelta, allDay, revertFunc){

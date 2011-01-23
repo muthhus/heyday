@@ -1,4 +1,7 @@
 class <%= controller_class_name %> < ApplicationController
+	<% if @generate_layout %>
+		layout "calendar"
+	<% end %>
 
   def new
     @event = <%= model_class_name %>.new(:end_at => 1.hour.from_now, :period => "Does not repeat")
@@ -21,7 +24,7 @@ class <%= controller_class_name %> < ApplicationController
     @events = <%= model_class_name %>.find(:all, :conditions => ["start_at >= '#{Time.at(params['start'].to_i).to_formatted_s(:db)}' and end_at <= '#{Time.at(params['end'].to_i).to_formatted_s(:db)}'"] )
     events = [] 
     @events.each do |event|
-      events << {:id => event.id, :title => event.title, :description => event.description || "Some cool description here...", :start => "#{event.start_at.iso8601}", :end => "#{event.end_at.iso8601}", :allDay => event.all_day, :recurring => (event.event_series_id)? true: false}
+      events << {:id => event.id, :title => event.title, :description => event.description || "Some cool description here...", :start => "#{event.start_at.iso8601}", :end => "#{event.end_at.iso8601}", :allDay => event.all_day, :recurring => false}
     end
     render :text => events.to_json
   end

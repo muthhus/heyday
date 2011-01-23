@@ -1,4 +1,4 @@
-<%%remote_form_for @event, :before => "$('#creating_events').show();", :complete => "$('#creating_events').hide();" do |f| %>
+<%% form_for @event, :url => {:controller => '<%= view_name %>'}, :remote => true, :before => "$('#creating_events').show();", :complete => "$('#creating_events').hide();" do |f| %>
 <p>
   <%%=f.label :title %>
   <br/>
