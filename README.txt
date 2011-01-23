@@ -29,8 +29,8 @@ rails new my_scheduler								// Create a new rails app
 # * --controller_name=xyz let's you set the name of the controller if heyday is creating it for you. If heyday is not creating it for you, there is no need to send in this option. If heyday is creating it for you and you don't specify a name, it will be named based on the model.
 
 rails generate heyday:install --model_name=event --jquery --layout --create_controller // Generate files
-rake db:migrate 											// Migrate to add the event model (or whatever you named it)
-rails server 													// Start the server
+rake db:migrate	// Migrate to add the event model (or whatever you named it)
+rails server	// Start the server
 open http://localhost:3000/events 	// View the calendar
 
 == Usage
