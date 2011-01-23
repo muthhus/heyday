@@ -6,86 +6,39 @@ Integrate fullcalendar jQuery plugin with Rails
 
 gem install thatguy-heyday --source http://gems.github.com
 
+== Quick Start
+
+... 																	// Install ruby and ruby gems
+
+sudo gem install rails 								// Install rails
+rails new my_scheduler								// Create a new rails app
+
+Add heyday to your Gemfile:
+	gem 'heyday', :require => 'heyday' 
+
+
+// Options
+// --model_name=xyz let's you set the name of the event model to use. If you leave it blank, no model will be created in that case you just need to add a line to your existing model: calendar_displayable :start_at_field => 'custom_start_at', :end_at_field => 'custom_end_at'
+// --jquery option will install jquery. Use this if you don't already have jquery in your project
+// --layout option will install a layout that includes the necessary js and css files
+// --create_controller will create a controller to handle getting, creating, and updating events. Leave this out if you have another controller you want to use. 
+// --controller_name=xyz let's you set the name of the controller if heyday is creating it for you. If heyday is not creating it for you, there is no need to send in this option. If heyday is creating it for you and you don't specify a name, it will be named based on the model.
+
+rails generate heyday:install --model_name=event --jquery --layout --create_controller // Generate files
+rake db:migrate 											// Migrate to add the event model (or whatever you named it)
+rails server 													// Start the server
+open http://localhost:3000/events 	// View the calendar
+
 == Usage
-
-As a plugin:
-
-script/plugin install git://github.com/elevation/event_calendar.git
-script/generate event_calendar
-
-As a gem:
-
-	gem install heyday
-
-Add this to your Gemfile:
-
-	gem 'heyday', :require => 'heyday'
-
-	rails plugin install git://github.com/elevation/event_calendar.git
-
-To generate the necessary static files AND the example below:
-	rails generate heyday # without model or controller (use your own)
-
-	rails generate heyday --model=event --controller=calendar # with model and controller
-
 
 # To use in your own model:
 In an active record model call: 'heyday' to allow the model to be displayed in the calendar
 
 class MyEvent < ActiveRecord::Base
-	heyday
+	calendar_displayable
 end
 
-== Development
 
-rake manifest
-rake install
-rake -T # view options
-rake docs
-
-make a new repository on git hub
-git init
-touch .gitignore >> pkg
-git add .
-git commit -m "... "
-git remote add origin git@github.com:someguy/heyday.git
-git push origin master
-
-on git hub:
-press edit
-check the RubyGem box.
-
-Build a gemspec file
-rake build_gemspec
-
-To change version
-1. change version number
-2. rake manifest
-3. rake build_gemspec
-
-##
-
-Make it act like a rails plugin too:
-mate init.rb
-> require 'heyday'
-
-Then people can use script/plugin install git://.../heyday.git
-
-== Installation
-
-Install ruby and ruby gems
-...
-
-sudo gem install rails 								// Install rails
-rails new MyApplication								// Create a new rails app
-
-Add heyday to your Gemfile:
-gem 'heyday', :require => 'heyday' 
-
-rails generate heyday:install --model_name=event --jquery --layout --create_controller // Generate files
-rake db:migrate 											// Migrate
-rails server 													// Start the server
-open http://localhost:3000/calendar 	// View the calendar
 
 
 
