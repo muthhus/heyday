@@ -15,6 +15,7 @@ lib/generators/heyday/templates/fullcalendar.css
 lib/generators/heyday/templates/fullcalendar.js
 lib/generators/heyday/templates/gcal.js
 lib/generators/heyday/templates/helper.rb.erb
+lib/generators/heyday/templates/javascripts/heyday/fullcalendar_rails.js
 lib/generators/heyday/templates/jquery-ui.js
 lib/generators/heyday/templates/jquery.js
 lib/generators/heyday/templates/layout.html.erb

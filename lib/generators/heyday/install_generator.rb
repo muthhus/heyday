@@ -46,11 +46,15 @@ module Heyday
           template "controller.rb.erb", "app/controllers/#{controller_name}.rb"
           route "match '/#{view_name}(/:year(/:month))' => '#{view_name}#index', :as => :#{named_route_name}, :constraints => {:year => /\\d{4}/, :month => /\\d{1,2}/}"
           route <<-eos
-            resources :#{view_name} do
-              collection do
-                get 'get_events'
-              end
-            end
+          
+  resources :#{view_name} do
+    collection do
+      get 'get_events'
+      post 'move'
+      post 'resize'
+    end
+  end
+  
           eos
         end
         
@@ -69,6 +73,8 @@ module Heyday
         views.each do |view|
           template view, File.join("app/views/#{view_name}/#{view}")
         end
+        
+        template "javascripts/heyday/fullcalendar_rails.js", "public/javascripts/heyday/fullcalendar_rails.js"
         
         directory "views/calendar/", "app/views/#{view_name}/"
   
