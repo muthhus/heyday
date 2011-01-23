@@ -1,24 +1,24 @@
 == Heyday
 
-# A gem to integrate fullcalendar jQuery plugin with Rails. The goal is to let you have a great calendar in Rails within seconds.
+A gem to integrate fullcalendar jQuery plugin with Rails. The goal is to let you have a great calendar in Rails within seconds.
 
-# This is based on Fullcalendar - http://arshaw.com/fullcalendar/
-# Some code from fullcalendar_rails - https://github.com/vinsol/fullcalendar_rails
-# And some ideas from event_calendar gem - http://rubygems.org/gems/event_calendar
+This is based on Fullcalendar - http://arshaw.com/fullcalendar/
+Some code from fullcalendar_rails - https://github.com/vinsol/fullcalendar_rails
+And some ideas from event_calendar gem - http://rubygems.org/gems/event_calendar
 
 == Install
 
-# gem install thatguy-heyday --source http://gems.github.com
+gem install thatguy-heyday --source http://gems.github.com
 
 == Quick Start
 
-# ... 																	// Install ruby and ruby gems
+... 																	// Install ruby and ruby gems
 
-# sudo gem install rails 								// Install rails
-# rails new my_scheduler								// Create a new rails app
+sudo gem install rails 								// Install rails
+rails new my_scheduler								// Create a new rails app
 
 # Add heyday to your Gemfile:
-# 	gem 'heyday', :require => 'heyday' 
+ 	gem 'heyday', :require => 'heyday' 
 
 
 #  Options
@@ -28,10 +28,10 @@
 # * --create_controller will create a controller to handle getting, creating, and updating events. Leave this out if you have another controller you want to use. 
 # * --controller_name=xyz let's you set the name of the controller if heyday is creating it for you. If heyday is not creating it for you, there is no need to send in this option. If heyday is creating it for you and you don't specify a name, it will be named based on the model.
 
-# rails generate heyday:install --model_name=event --jquery --layout --create_controller // Generate files
-# rake db:migrate 											// Migrate to add the event model (or whatever you named it)
-# rails server 													// Start the server
-# open http://localhost:3000/events 	// View the calendar
+rails generate heyday:install --model_name=event --jquery --layout --create_controller // Generate files
+rake db:migrate 											// Migrate to add the event model (or whatever you named it)
+rails server 													// Start the server
+open http://localhost:3000/events 	// View the calendar
 
 == Usage
 
