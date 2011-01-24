@@ -1,4 +1,6 @@
-<%% form_for @event, :url => {:controller => '<%= view_name %>'}, :remote => true, :before => "$('#creating_events').show();", :complete => "$('#creating_events').hide();" do |f| %>
+<%% save_path = '<%= view_name %>' %>
+<%% save_path += "/#{@event.id}" unless @event.new_record? %>
+<%%= form_for @event, :url => save_path, :remote => true, :before => "$('#creating_events').show();", :complete => "$('#creating_events').hide();" do |f| %>
 <p>
   <%%=f.label :title %>
   <br/>

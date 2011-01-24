@@ -1,7 +1,8 @@
 CHANGELOG
-LICENSE
+GPL-LICENSE.txt
+MIT-LICENSE.txt
 Manifest
-README.rdoc
+README.txt
 Rakefile
 init.rb
 install.rb
