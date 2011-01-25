@@ -1,4 +1,5 @@
 require 'heyday/railtie'
+require 'heyday/schedule_atts'
 
 module Heyday
 
@@ -7,12 +8,6 @@ module Heyday
   end
 
   module ClassMethods
-    # def heyday(*args, &block)
-    #   options = {}
-    #   options.merge!(args.pop) if args.last.kind_of?(Hash)
-    #   args.each do |arg|
-    #   end
-    # end
     
     def calendar_displayable(options = {})
       defaults = {
@@ -33,6 +28,7 @@ module Heyday
       alias_attribute :description, description_field unless description_field == 'description' || description_field.nil?
       #before_save :adjust_all_day_dates
       send :include, InstanceMethods
+      send :include, ScheduleAttributes
       self.repeat_options = [
         "Does not repeat",
         "Daily"          ,

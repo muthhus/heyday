@@ -1,3 +1,5 @@
+# This does not work yet.
+
 $:.unshift File.expand_path('../vendor', __FILE__)
 require 'thor'
 require 'thor/actions'

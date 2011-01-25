@@ -1,8 +1,8 @@
 CHANGELOG
 GPL-LICENSE.txt
-MIT-LICENSE.txt
+Gemfile
 Manifest
-README.txt
+README.rdoc
 Rakefile
 init.rb
 install.rb
@@ -43,6 +43,8 @@ lib/heyday.rb
 lib/heyday/calendar_helper.rb
 lib/heyday/cli.rb
 lib/heyday/railtie.rb
+lib/heyday/schedule_atts.rb
+lib/heyday/version.rb
 spec/fixtures/models.rb
 spec/heyday_spec.rb
 spec/spec_heper.rb

@@ -5,7 +5,7 @@ require 'echoe'
 Echoe.new('heyday', '0.1.0') do |p|
   p.description = "Integrate fullcalendar jQuery plugin with Rails"
   p.summary = "An easy way to get a great calendar in any Rails3 project"
-  p.url = "http://github.com/??/heyday"
+  p.url = "https://github.com/thatguy/heyday"
   p.author = "Adam Stasio"
   p.email = "adamstasio@gmail.com"
   p.ignore_pattern = ["tmp/*", "script/*"]
