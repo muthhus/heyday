@@ -1,0 +1,79 @@
+== Heyday
+
+A gem to integrate fullcalendar jQuery plugin with Rails. The goal is to let you have a great calendar in Rails within seconds.
+
+This is based on Fullcalendar - http://arshaw.com/fullcalendar/
+Some code from fullcalendar_rails - https://github.com/vinsol/fullcalendar_rails
+And some ideas from event_calendar gem - http://rubygems.org/gems/event_calendar
+
+== Install
+
+		gem install thatguy-heyday --source http://gems.github.com
+
+== Quick Start
+
+Install ruby and ruby gems
+
+Install Rails 3
+
+		sudo gem install rails 		
+
+Create a new rails app
+
+		rails new my_scheduler
+
+Add heyday to your Gemfile
+
+		gem 'heyday', :require => 'heyday' 
+
+---
+
+===Options
+
+'model_name' let's you set the name of the event model to use. If you leave it blank, no model will be created in that case you just need to add a line to your existing model: calendar_displayable :start_at_field => 'custom_start_at', :end_at_field => 'custom_end_at'
+
+		--model_name=xyz
+		
+'jquery' option will install jquery. Use this if you don't already have jquery in your project
+
+		--jquery 
+		
+--layout option will install a layout that includes the necessary js and css files
+
+--create_controller will create a controller to handle getting, creating, and updating events. Leave this out if you have another controller you want to use. 
+
+--controller_name=xyz let's you set the name of the controller if heyday is creating it for you. If heyday is not creating it for you, there is no need to send in this option. If heyday is creating it for you and you don't specify a name, it will be named based on the model.
+
+---
+
+===Generate files
+
+		rails generate heyday:install --model_name=event --jquery --layout --create_controller
+
+Migrate to add the event model (or whatever you named it)
+
+		rake db:migrate
+		
+Start the server
+
+		rails server
+
+View the calendar
+		
+		open http://localhost:3000/events
+
+---
+
+== Usage
+
+To use in your own model:
+In an active record model call: 'heyday' to allow the model to be displayed in the calendar
+
+		class MyEvent < ActiveRecord::Base
+			calendar_displayable
+		end
+
+
+
+
+
