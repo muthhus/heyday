@@ -82,6 +82,14 @@ In an active record model call: 'heyday' to allow the model to be displayed in t
 	end
 
 
+== Development
 
+Build this gem with
+
+	gem build heyday.gemspec
+	
+Install with
+
+	rake install
 
 
