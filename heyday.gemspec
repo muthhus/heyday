@@ -9,11 +9,11 @@ Gem::Specification.new do |s|
   s.authors = ["Adam Stasio"]
   s.email = ["adamstasio@gmail.com"]
   s.homepage = "https://github.com/thatguy/heyday"
-  s.summary = %q{Integrate Fullcalendar jQuery calendar plugin with a Rails application}
-  s.description = %q{Integrate Fullcalendar jQuery calendar plugin with a Rails application}
+  s.summary = "Integrate Fullcalendar jQuery calendar plugin with a Rails application"
+  s.description = "Integrate Fullcalendar jQuery calendar plugin with a Rails application"
   s.files = `git ls-files`.split("\n")
   s.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
-  s.add_dependency 'ice_cube', '>= 0.6.4'
-  s.add_dependency 'activesupport'
+  s.add_dependency('ice_cube', '>= 0.6.4')
+  s.add_dependency('activesupport')
 end
